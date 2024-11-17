@@ -6,7 +6,7 @@
 		"dark": "/logos/dark.svg"
 	},
 	"metadata": {
-		"og:image": "/og.png"
+		"og:image": "https://github.com/nhedger/unicon/blob/main/docs/og.png?raw=true"
 	},
 	"favicon": "/unicorn.svg",
 	"colors": {
