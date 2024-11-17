@@ -45,7 +45,7 @@ class IconCache
      */
     public function pull(string $prefix, string $name): ?string
     {
-        if ($this->has($prefix, $name)) {
+        if (!$this->has($prefix, $name)) {
             return null;
         }
 
