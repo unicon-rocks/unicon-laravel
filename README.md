@@ -1,9 +1,9 @@
 [![](docs/og.svg)](https://unicon.rocks)
 
-![Packagist License](https://img.shields.io/packagist/l/hedger/unicon)
-![Packagist Version](https://img.shields.io/packagist/v/hedger/unicon)
-![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/hedger/unicon/php)
-![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/hedger/unicon/illuminate%2Fsupport?label=Laravel)
+![GitHub License](https://img.shields.io/github/license/nhedger/unicon)
+![GitHub Tag](https://img.shields.io/github/v/tag/nhedger/unicon?label=version)
+![PHP Versions](https://img.shields.io/badge/php-%3E%3D8.1-blue)
+![Laravel Versions](https://img.shields.io/badge/laravel-%3E%3D10-red)
 
 Unicon is a package for [Laravel] that enables seamless, on-demand integration of over 200,000 icons from the [Iconify] API, with caching for optimized performance.
 
