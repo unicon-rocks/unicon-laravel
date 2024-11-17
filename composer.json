@@ -35,5 +35,13 @@
 		"test": "@php vendor/bin/phpunit --colors=always",
 		"lint": ["@php vendor/bin/phpstan analyse --verbose --ansi"],
 		"format": "@php vendor/bin/pint --repair"
+	},
+	"extra": {
+		"laravel": {
+			"providers": ["Hedger\\Unicon\\IconServiceProvider"],
+			"aliases": {
+				"Icon": "Hedger\\Unicon\\Facades\\Icon"
+			}
+		}
 	}
 }
