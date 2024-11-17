@@ -1,0 +1,38 @@
+{
+	"name": "hedger/unicon",
+	"description": "Universal icon component for Laravel",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Hedger\\Unicon\\": "src/"
+		},
+		"files": ["src/functions.php"]
+	},
+	"authors": [
+		{
+			"name": "Nicolas Hedger",
+			"email": "nicolas@hedger.ch"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {
+		"illuminate/support": "^11|^10",
+		"guzzlehttp/guzzle": "^7"
+	},
+	"require-dev": {
+		"orchestra/testbench": "^8 || ^9",
+		"laravel/pint": "^1.18",
+		"phpunit/phpunit": "^11 || ^10"
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Hedger\\Unicon\\Test\\": "test/"
+		}
+	},
+	"scripts": {
+		"test": "@php vendor/bin/phpunit --colors=always",
+		"lint": ["@php vendor/bin/phpstan analyse --verbose --ansi"],
+		"format": "@php vendor/bin/pint --repair"
+	}
+}

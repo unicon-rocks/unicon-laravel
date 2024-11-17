@@ -1,0 +1,30 @@
+---
+title: 'Blade component'
+sidebarTitle: 'Blade component'
+description: 'Render icons with the Unicon Blade component.'
+icon: 'code'
+---
+
+
+```html
+<x-icon name="heroicons:clock" />
+```
+
+
+## Styling
+
+Use the special `class` attribute to set custom class names for the rendered icon.
+
+```html
+<x-icon name="heroicons:clock" class="w-6 h-6" />
+```
+
+<Note>Class names will be merged with the default class names declared in the configuration (if any).</Note>
+
+## Custom attributes
+
+Any custom attributes will be passed down to the rendered icon.
+
+```html
+<x-icon name="heroicons:clock" data-slot="icon" />
+```

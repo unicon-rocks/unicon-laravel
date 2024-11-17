@@ -1,0 +1,50 @@
+---
+title: 'Configuration reference'
+sidebarTitle: 'Configuration'
+description: 'Unicon configuration reference'
+icon: 'gear'
+---
+
+<ParamField path="defaults" type="map">
+    This section contains the default rendering options for the icons.
+    <Expandable title="defaults" defaultOpen={true}>
+        <ParamField path="class" type="string" default="">
+            The default class names to apply to all rendered icons.
+        </ParamField>
+    </Expandable>
+</ParamField>
+<ParamField path="cache" type="map">
+    This section contains the configuration options for the icon cache.
+    <Expandable title="cache" defaultOpen={true}>
+        <ParamField path="disk" type="map">
+        This section contains the configuration options for the icon cache disk.
+        <Expandable title="disk" defaultOpen={true}>
+            <ParamField path="driver" type="string" default="local">
+                This value is the name of the disk to use for caching icons.
+            </ParamField>
+            <ParamField path="path" type="string" default="icons">
+                This value is the path (relative to the disk root) where the icons will be stored.
+            </ParamField>
+        </Expandable>
+        </ParamField>
+    </Expandable>
+</ParamField>
+<ParamField path="name" type="string" default="icon">
+    This value is the name that will be used to register the Blade component and directive.
+    
+    - Blade component: `<x-{name}>`
+    - Blade directive: `@{name}`
+</ParamField>
+<ParamField path="iconify" type="map">
+   This section contains the configuration options for the Iconify API.
+   <Expandable title="iconify" defaultOpen={true}>
+       <ParamField path="url" type="string" default="https://api.iconify.design">
+           The value is the base URL of the Iconify API.
+       </ParamField>
+       <ParamField path="timeout" type="integer" default="5">
+           This value is the timeout in seconds for the Iconify API requests.
+
+           If the request times out, the component won't be rendered.
+       </ParamField>
+   </Expandable>
+</ParamField>
