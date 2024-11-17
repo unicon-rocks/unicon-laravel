@@ -20,7 +20,11 @@ class Icon extends Component
      */
     public function render(): Closure
     {
-        return fn () => $this->injectAttributes($this->renderer->render($this->name));
+        return function () {
+            return $this->name ? $this->injectAttributes(
+                $this->renderer->render($this->name)
+            ) : '';
+        };
     }
 
     /**
