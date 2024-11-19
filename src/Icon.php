@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Hedger\Unicon;
 
 use Closure;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
+use PHPUnit\Framework\TestSize\Unknown;
 
 class Icon extends Component
 {
@@ -21,9 +23,17 @@ class Icon extends Component
     public function render(): Closure
     {
         return function () {
-            return $this->name ? $this->injectAttributes(
-                $this->renderer->render($this->name)
-            ) : '';
+
+            $svg = $this->name ? $this->renderer->render($this->name) : '';
+
+            if (!$svg) {
+                if (!App::environment(['production'])) {
+                    throw new UnknownIconException($this->name);
+                }
+                return '';
+            }
+
+            return $this->injectAttributes($svg);
         };
     }
 
