@@ -5,6 +5,13 @@ description: 'A list of changes for each release.'
 icon: 'rectangle-history'
 ---
 
+<Update label="2024-11-20" description="v0.3.0">
+    <Warning>This release contains breaking changes.</Warning>
+    
+    - The `timeout` option has been removed from the configuration in favor of the `request_options` option.
+    - The `request_options` option has been added to the configuration and allows specifying Guzzle request options.
+</Update>
+
 <Update label="2024-11-19" description="v0.2.1">
     Reduce package size by 97.8% (from 312KB to 7KB).
 </Update>
