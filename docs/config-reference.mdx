@@ -47,11 +47,14 @@ icon: 'gear'
            If the request times out, the component won't be rendered.
        </ParamField>
        <ParamField path="verify" type="boolean|string" default="true">
-           This value sets if the SSL certificate is getting verified. 
+           This value controls whether the SSL certificate should be verifiedm when making requests
+           to the Iconify API.
 
-            - Set `true` to enable SSL certificate verification and use the default CA bundle provided by operating system.
-            - Set `false` to disable certificate verification (this is insecure!).
-            - Set to a string to provide the path to a CA bundle to enable verification using a custom certificate.
+            - Set to `true` to enable the certificate verification.
+            - Set to `false` to disable the certificate verification.
+
+           For more information, see the Guzzle documentation about the 
+           [verify](https://docs.guzzlephp.org/en/stable/request-options.html#verify) option.
        </ParamField>
    </Expandable>
 </ParamField>
