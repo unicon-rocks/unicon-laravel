@@ -27,6 +27,7 @@ class IconDownloader
         try {
             return Http::baseUrl(config('unicon.iconify.url'))
                 ->timeout(config('unicon.iconify.timeout', 5))
+                ->withOptions(['verify' => config('unicon.iconify.verify', true)])
                 ->get("$prefix/$name.svg")
                 ->throwUnlessStatus(200)
                 ->body();

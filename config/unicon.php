@@ -68,6 +68,7 @@ return [
     'iconify' => [
         'url' => 'https://api.iconify.design',
         'timeout' => 5,
+        'verify' => true,
     ],
 
 ];
