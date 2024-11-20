@@ -46,15 +46,20 @@ icon: 'gear'
 
            If the request times out, the component won't be rendered.
        </ParamField>
-       <ParamField path="verify" type="boolean|string" default="true">
-           This value controls whether the SSL certificate should be verifiedm when making requests
-           to the Iconify API.
+       <ParamField path="request_options" type="map" default="['timeout' => 5]">
+            This value is a map of http request options to be passed to the underlying Guzzle client
+            for all requests to the Iconify API.
 
-            - Set to `true` to enable the certificate verification.
-            - Set to `false` to disable the certificate verification.
+            For example, you can set the `timeout` option to set a custom timeout.
 
-           For more information, see the Guzzle documentation about the 
-           [verify](https://docs.guzzlephp.org/en/stable/request-options.html#verify) option.
+            ```php
+            'request_options' => [
+                'timeout' => 10,
+            ],
+            ```
+
+            See the Guzzle documentation about the [request options](https://docs.guzzlephp.org/en/stable/request-options.html)
+            for more information.
        </ParamField>
    </Expandable>
 </ParamField>
