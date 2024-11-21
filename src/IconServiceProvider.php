@@ -13,7 +13,7 @@ class IconServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Merge the default configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/unicon.php', 'unicon');
+        $this->mergeConfigFrom(__DIR__ . '/../config/unicon.php', 'unicon');
 
         // Bind the IconRenderer to the container
         $this->app->bind(IconRenderer::class, function (Application $app) {
@@ -34,8 +34,12 @@ class IconServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/unicon.php' => config_path('unicon.php'),
+                __DIR__ . '/../config/unicon.php' => config_path('unicon.php'),
             ], 'unicon-config');
+
+            $this->commands([
+                Commands\IconCacheCommand::class,
+            ]);
         }
     }
 }
