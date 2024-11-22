@@ -18,8 +18,8 @@ be pulled from the cache instead of the Iconify API.
 ## Caveats
 
 This command performs a recursive regex search on all the Blade files in your
-application. This means that only icons that are statically defined in the
-Blade file will be found.
+application (excluding `node_modules` and `vendor`). This means that only icons 
+that are statically defined will be detected.
 
 | Will be found ✅ | Will not be found ❌ |
 | ------------- | ----------------- |
