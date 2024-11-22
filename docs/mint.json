@@ -57,6 +57,10 @@
 			"pages": ["components/blade-component", "components/helper-function"]
 		},
 		{
+			"group": "Commands",
+			"pages": ["commands/preload"]
+		},
+		{
 			"group": "Reference",
 			"pages": ["config-reference", "credits"]
 		}

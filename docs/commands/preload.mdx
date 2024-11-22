@@ -1,0 +1,33 @@
+---
+title: 'Preload command'
+sidebarTitle: 'Preload '
+description: 'Preload all Unicon commands on deployment'
+icon: 'terminal'
+---
+
+Unicon provides the `icons:preload` to preload all icons on deployment.
+
+```bash
+php artisan icons:preload
+```
+
+While Unicon will hapilly fetch icons on-demand, this command will ensure that
+even the first render of an icon will be as fast as possible, because they will
+be pulled from the cache instead of the Iconify API.
+
+## Caveats
+
+This command performs a recursive regex search on all the Blade files in your
+application (excluding `node_modules` and `vendor`). This means that only icons 
+that are statically defined will be detected.
+
+| Will be found ✅ | Will not be found ❌ |
+| ------------- | ----------------- |
+| `<x-icon name="noto:unicorn" />` | `<x-icon name="{{ $icon }}" />` |
+| `<x-icon name="heroicons:clock" />` | `<x-icon :name="$name" />` |
+
+<Tip>
+Icons whose name is dynamically defined will have to be fetched on-demand
+the very first time they are rendered, and subsequent renders will be cached
+all the same.
+</Tip>
