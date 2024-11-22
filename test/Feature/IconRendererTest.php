@@ -46,4 +46,19 @@ class IconRendererTest extends TestCase
         $renderer->render('heroicons:clock'); // downloads the icon
         $renderer->render('heroicons:clock'); // pulls the icon from the cache
     }
+
+    #[Test]
+    public function test_it_uses_the_defaullt_prefix_if_the_prefix_is_not_specified()
+    {
+        $this->partialMock(IconDownloader::class)
+            ->shouldReceive('download')
+            ->once()
+            ->with('heroicons', 'clock')
+            ->andReturn($this->icon);
+
+        Config::set('unicon.defaults.prefix', 'heroicons');
+
+        $renderer = $this->app->make(IconRenderer::class);
+        $renderer->render('clock');
+    }
 }

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Unicon;
 
-use Illuminate\Support\Str;
-
 class IconRenderer
 {
     public function __construct(
@@ -15,13 +13,16 @@ class IconRenderer
 
     public function render(string $name): ?string
     {
-        if (! Str::contains($name, ':')) {
+        $parts = explode(':', $name, 2);
+
+        $prefix = count($parts) === 2 ? $parts[0] : config('unicon.defaults.prefix');
+        $name = count($parts) === 2 ? $parts[1] : $name;
+
+        if (!$prefix) {
             throw new \InvalidArgumentException(
-                'The name must be in the format "prefix:name".',
+                'The prefix must be specified either in the name of the icon or in the configuration.',
             );
         }
-
-        [$prefix, $name] = explode(':', $name, 2);
 
         $icon = match ($isInCache = $this->cache->has($prefix, $name)) {
             true => $this->cache->pull($prefix, $name),
