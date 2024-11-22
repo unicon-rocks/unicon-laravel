@@ -38,7 +38,7 @@ class IconServiceProvider extends ServiceProvider
             ], 'unicon-config');
 
             $this->commands([
-                Commands\IconCacheCommand::class,
+                Commands\IconsPreloadCommand::class,
             ]);
         }
     }

@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Hedger\Unicon\Commands;
 
+use Hedger\Unicon\IconRenderer;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
-class IconPreloadCommand extends Command
+class IconsPreloadCommand extends Command
 {
     /**
      * The name and signature of the console command
@@ -20,6 +21,12 @@ class IconPreloadCommand extends Command
      */
     protected $description = 'Preloads all Unicon icons';
 
+    public function __construct(
+        protected IconRenderer $renderer,
+    ) {
+        parent::__construct();
+    }
+
     /**
      * Execute the console command
      */
@@ -27,13 +34,11 @@ class IconPreloadCommand extends Command
     {
         $this->info('Looking for icons to preload in your Blade files...');
 
-        $icons = $this->findAllBladeFiles()
-            ->flatMap(function (string $file) {
-                $this->info("Scanning {$file}...");
-                $icons = $this->findIconsInFile($file);
-                $this->info("Found {$icons->count()} icons: {$icons->implode(', ')}");
-                return $icons;
-            })->unique()->sort();
+        $this->findAllBladeFiles()
+            ->flatMap(fn(string $file) => $this->findIconsInFile($file))
+            ->unique()
+            ->sort()
+            ->each(fn(string $icon) => $this->preloadIcon($icon));
 
         return self::SUCCESS;
     }
@@ -85,17 +90,26 @@ class IconPreloadCommand extends Command
 
         $componentName = Str::snake(config('unicon.name', 'icon'));
 
-        preg_match_all(
+        $hasMatches = preg_match_all(
             pattern: '/<x-' . $componentName . '\s+name\s*=\s*(["\'])(?<name>[\s\S]*?)\1/m',
             subject: $contents,
             matches: $matches,
             flags: PREG_SET_ORDER,
         );
 
-        if (!$matches) {
+        if (!$hasMatches) {
             return [];
         }
 
         return collect($matches)->map(fn($match) => $match['name']);
+    }
+
+    /**
+     * Preloads an icon
+     */
+    protected function preloadIcon(string $icon): void
+    {
+        $this->info("Preloading {$icon}...");
+        $this->renderer->render($icon);
     }
 }
