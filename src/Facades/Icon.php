@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon\Facades;
+namespace Unicon\Facades;
 
-use Hedger\Unicon\IconRenderer;
+use Unicon\IconRenderer;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Hedger\Unicon\IconRenderer
+ * @see Unicon\IconRenderer
  * 
  * @method static string render(string $name) Renders the icon.
  */

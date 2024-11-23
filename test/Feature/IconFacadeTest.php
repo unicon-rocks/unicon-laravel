@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon\Test\Feature;
+namespace Unicon\Test\Feature;
 
-use Hedger\Unicon\Facades\Icon;
-use Hedger\Unicon\IconRenderer;
-use Hedger\Unicon\Test\TestCase;
+use Unicon\Facades\Icon;
+use Unicon\IconRenderer;
+use Unicon\Test\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 
 class IconFacadeTest extends TestCase

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon\Test\Feature;
+namespace Unicon\Test\Feature;
 
-use Hedger\Unicon\IconCache;
-use Hedger\Unicon\IconDownloader;
-use Hedger\Unicon\IconRenderer;
-use Hedger\Unicon\Test\TestCase;
+use Unicon\IconCache;
+use Unicon\IconDownloader;
+use Unicon\IconRenderer;
+use Unicon\Test\TestCase;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\Attributes\Test;
 

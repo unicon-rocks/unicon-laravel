@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon\Test\Feature;
+namespace Unicon\Test\Feature;
 
-use Hedger\Unicon\IconDownloader;
-use Hedger\Unicon\Test\TestCase;
+use Unicon\IconDownloader;
+use Unicon\Test\TestCase;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;

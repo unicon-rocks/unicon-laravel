@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon\Test\Feature;
+namespace Unicon\Test\Feature;
 
-use Hedger\Unicon\IconRenderer;
-use Hedger\Unicon\Test\TestCase;
+use Unicon\IconRenderer;
+use Unicon\Test\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 
 class IconHelperTest extends TestCase

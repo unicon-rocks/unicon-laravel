@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon\Test\Feature;
+namespace Unicon\Test\Feature;
 
-use Hedger\Unicon\IconRenderer;
-use Hedger\Unicon\IconServiceProvider;
-use Hedger\Unicon\Test\TestCase;
+use Unicon\IconRenderer;
+use Unicon\IconServiceProvider;
+use Unicon\Test\TestCase;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
 use PHPUnit\Framework\Attributes\Test;

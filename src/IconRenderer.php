@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon;
+namespace Unicon;
 
 use Illuminate\Support\Str;
 

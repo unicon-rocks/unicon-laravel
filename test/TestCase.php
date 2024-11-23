@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon\Test;
+namespace Unicon\Test;
 
-use Hedger\Unicon\IconCache;
+use Unicon\IconCache;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -17,7 +17,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app): array
     {
         return [
-            \Hedger\Unicon\IconServiceProvider::class,
+            \Unicon\IconServiceProvider::class,
         ];
     }
 

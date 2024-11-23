@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"autoload": {
 		"psr-4": {
-			"Hedger\\Unicon\\": "src/"
+			"Unicon\\": "src/"
 		},
 		"files": ["src/functions.php"]
 	},
@@ -29,7 +29,7 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Hedger\\Unicon\\Test\\": "test/"
+			"Unicon\\Test\\": "test/"
 		}
 	},
 	"scripts": {
@@ -39,9 +39,9 @@
 	},
 	"extra": {
 		"laravel": {
-			"providers": ["Hedger\\Unicon\\IconServiceProvider"],
+			"providers": ["Unicon\\IconServiceProvider"],
 			"aliases": {
-				"Icon": "Hedger\\Unicon\\Facades\\Icon"
+				"Icon": "Unicon\\Facades\\Icon"
 			}
 		}
 	}

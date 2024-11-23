@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Hedger\Unicon\Commands;
+namespace Unicon\Commands;
 
-use Hedger\Unicon\IconRenderer;
+use Unicon\IconRenderer;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;

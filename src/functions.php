@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Hedger\Unicon\Facades\Icon;
+use Unicon\Facades\Icon;
 
 if (! function_exists('icon')) {
     /**
