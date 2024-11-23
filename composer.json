@@ -1,5 +1,5 @@
 {
-	"name": "hedger/unicon",
+	"name": "unicon/unicon-laravel",
 	"description": "Universal icon component for Laravel",
 	"type": "library",
 	"license": "MIT",
