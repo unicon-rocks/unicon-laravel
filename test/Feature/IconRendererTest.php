@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Unicon\Test\Feature;
 
+use Illuminate\Support\Facades\Config;
 use Unicon\IconCache;
 use Unicon\IconDownloader;
 use Unicon\IconRenderer;
