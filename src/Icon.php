@@ -8,7 +8,6 @@ use Closure;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
-use PHPUnit\Framework\TestSize\Unknown;
 
 class Icon extends Component
 {
